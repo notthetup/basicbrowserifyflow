@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "browserify main.js -o bundle.js && http-server"
+    "start": "concurrently --kill-others \"watchify main.js -o bundle.js\" \"http-server\""
   },
   "author": "Chinmay <notthetup@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^14.1.0",
-    "http-server": "^0.9.0"
+    "concurrently": "^3.3.0",
+    "http-server": "^0.9.0",
+    "watchify": "^3.9.0"
   },
   "dependencies": {
     "uniq": "^1.0.1"
